@@ -1,7 +1,6 @@
 fn main() {
-
     //declaration of a variable and assigining a value to it.
-    
+
     let number = 12;
     let number2;
     number2 = 4;
@@ -9,9 +8,9 @@ fn main() {
     let name1 = "Muhammad";
     let name2;
     name2 = "Talha";
-    
+
     //print the values to those numbers.
-    
+
     println!("{}", number);
     println!("{}", number2);
     println!("{}", name1);
@@ -19,9 +18,9 @@ fn main() {
 
     println!("Second number will be {}", number2);
     println!("Second name will be {}", name2);
-  
 
     //Data types in Rust
+    //Rust default datatype is i32
 
     let x: i32 = 2;
     println!("The value of x will be: {}", x);
@@ -40,12 +39,12 @@ fn main() {
     let number1: u128 = 121543546464;
     println!("{}", number1);
 
-    let number3: f64 = 12.773;
-    println!("{}", number3);
+    let number3: f64 = 12.773; //floating point types f32, f64
+    println!("{}", number3); //default type is f64
 
     let value: bool = true;
     println!("{}", value);
 
-    let name_: char = '@';
+    let name_: char = '@'; // use single quotes / size will be 4 bytes
     println!("{}", name_);
 }
