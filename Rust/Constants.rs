@@ -6,7 +6,8 @@ fn main() {
     //must be Capitalize every character of its name during declaration
 
     const FATHERCNIC: i128 = 1234567891011;
-    println!("{}", FATHERCNIC);
+    println!("The CNIC of his Father will be: {}", FATHERCNIC);
 
-
+    const COMPANYNAME: &str = "MT Products";
+    println!("My comapony name will be: {}", COMPANYNAME);
 }
