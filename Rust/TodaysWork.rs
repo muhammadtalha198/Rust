@@ -1,28 +1,38 @@
+extern crate reqwest;
+// #[async_std::main]
 
-use std::collections::HashMap;
-use dotenv :: dotenv;
-// use std :: env;
+// async fn main() {
+//    let response_text = reqwest::get("http://127.0.0.1:5500/talha.html").await;
+//         // .expect("couldn't make request!")
+//         // .text()
+//         // .expect("Couldn't read response!");
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-
-    dotenv().ok();
-    let resp = reqwest::get("https://httpbin.org/ip")
-        .await?
-        .json::<HashMap<String, String>>()
-        .await?;
-    println!("{:#?}", resp);
-    Ok(())
-}
-
-// async fn short_way_to_create_http_request() {
-
-//     let body = reqwest::get("https://www.rust-lang.org")
-//     .await?
-//     .text()
-//     .await?;
-
-//     println!("body = {:?}", body);
-//     return;
+//     println!("Response text: {:?}", response_text);
 // }
 
+
+fn main() {
+    let response_text = reqwest::get("http://127.0.0.1:5500/talha.html")
+        .expect("couldn't make request!")
+        .text()
+        .expect("Couldn't read response!");
+
+    println!("Response text: {:?}", response_text);
+}
+
+
+
+
+// fn main() {
+//     http_request();
+// }
+
+// async fn http_request(){
+    
+//     let response_text = reqwest::get("http://127.0.0.1:5500/talha.html").await;
+//         // .expect("couldn't make request!")
+//         // .text()
+//         // .expect("Couldn't read response!");
+
+//     println!("Response text: {:?}", response_text);
+// }
