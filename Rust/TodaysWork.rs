@@ -1,38 +1,39 @@
-extern crate reqwest;
-// #[async_std::main]
+// fn main() {
+//     //--------------OwnerShip Rules -----------
+//     //1. Each value in Rust has a variable thats called its owner.
+//     //2. There can only be one owner at a time.
+//     //3. When the owner goes out of space, the value will be dropped.
 
-// async fn main() {
-//    let response_text = reqwest::get("http://127.0.0.1:5500/talha.html").await;
-//         // .expect("couldn't make request!")
-//         // .text()
-//         // .expect("Couldn't read response!");
+//     {
+//         let s: &str = "hello"; // s is valid from this point forward
+//                                // create the string dynamically
+//         let s1: String = String::from("hello"); //now this stored in heap
+//         //do stuff with s
+//     } // scope is over , s is not valid
 
-//     println!("Response text: {:?}", response_text);
 // }
 
-
-fn main() {
-    let response_text = reqwest::get("http://127.0.0.1:5500/talha.html")
-        .expect("couldn't make request!")
-        .text()
-        .expect("Couldn't read response!");
-
-    println!("Response text: {:?}", response_text);
-}
-
-
-
+//--------------Assigning a value to another variable------------------
 
 // fn main() {
-//     http_request();
+//     let x: i32 = 5;
+//     let y: i32 = x; //copy
+
+//     let s1: String = String::from("Hello");
+//     // let s2: String = s1; // Move (not shallow copy!) //error
+//     let s3: String = s1.clone(); // Move (not shallow copy!) //error
+
+//     println!("{}, world!", s1);
 // }
 
-// async fn http_request(){
-    
-//     let response_text = reqwest::get("http://127.0.0.1:5500/talha.html").await;
-//         // .expect("couldn't make request!")
-//         // .text()
-//         // .expect("Couldn't read response!");
+//----------ownerShip and functions--------------------------
+fn main() {
+    let s: String = String::from("hello");
 
-//     println!("Response text: {:?}", response_text);
-// }
+    takes_ownership(s);
+    println!("{}", some_string);
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{}", some_string)
+}
