@@ -4,9 +4,38 @@
     struct Person {
         name: String,
         age: u8,
-        weight: String,
-        height: String,
+        weight: u8,
+        height: u8,
     }
+
+    fn create_person(name: String, age: u8, weight: u8, height: u8) -> Person {
+        Person {
+            name,
+            age,
+            weight,
+            height,
+        }
+    }
+
+
+    fn print_person_info(person: &Person) {
+        println!("Person Info - Name: {}, Age: {}, Weight: {}, Height: {}", person.name, person.age, person.weight, person.height);
+    }
+
+    impl Person {
+
+        fn print_info(&self) {
+            println!("Person Info - Name: {}, Age: {}, Weight: {}, Height: {}", self.name, self.age, self.weight, self.height);
+        }
+        
+        fn birthday(&mut self) {
+            self.age += 1;
+        }
+
+        fn update_weight(&mut self, new_weight: u8) {
+            self.weight = new_weight;
+        }
+    }   
 
 
 
@@ -16,8 +45,22 @@
 fn main() {
 
 
-    
+    let mut person1 = Person{
+        name: String::from("Alice"),
+        age: 30,
+        weight: 65,
+        height: 170,
+    };
 
+    //print initial values
+    println!("Initial Person1 - Name: {}, Age: {}, Weight: {}, Height: {}", person1.name, person1.age, person1.weight, person1.height);
+
+    //modify values
+    person1.age = 31;
+    person1.weight = 66;    
+
+    //print modified values
+    println!("Modified Person1 - Name: {}, Age: {}, Weight: {}, Height: {}", person1.name, person1.age, person1.weight, person1.height);
 
 
 
