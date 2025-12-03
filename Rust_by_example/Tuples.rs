@@ -17,6 +17,18 @@ impl fmt::Display for Matrix{
     }
 }
 
+// Function to transpose a 2x2 matrix
+fn transpose(matrix:Matrix) -> Matrix{
+    matrix
+}
+
+
+//fist add values in Matrix then return 
+fn add_values_in_matrix(v1:f32,v2:f32,v3:f32,v4:f32) ->Matrix{
+    let matrix = Matrix(v1,v2,v3,v4);
+    matrix
+}
+
 
 fn main () {
 
@@ -26,6 +38,13 @@ fn main () {
 
     let display_matrix = Matrix(1.1, 1.2, 2.1, 2.2);
     println!("{}", display_matrix);
+
+    let tranpose_matrix = transpose(display_matrix);
+    println!("transposed Matrix: {}", tranpose_matrix);
+
+    let print_added_matrix = add_values_in_matrix(3.3,4.4,5.5,6.6);
+    println!("Added Matrix: {}", print_added_matrix);
+
 
 
     //A tuple with bunch of different types 
