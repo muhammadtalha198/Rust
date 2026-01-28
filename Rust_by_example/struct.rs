@@ -122,7 +122,7 @@ fn main(){
         Rectangle{ top_left: top_left_point , bottom_right: bottom_right_point}     
 
     }
-
+ 
     let my_square = square(Point{x:1.0,y:4.0},2.0);
     println!("My square is {:?}",my_square);
     // println!("Area of my square is {}",rect_area(my_square));
